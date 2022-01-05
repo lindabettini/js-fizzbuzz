@@ -12,14 +12,28 @@ Abbiamo visto qualcosa di particolare che possiamo usare?
 % 5 ==0 */
 
 
-let toPrint = document.getElementById('result');
+let allNumbers = document.getElementById('any-number');
 
 let numbers = '';
 
 // // Scrivi un programma che stampi i numeri da 1 a 100
 for (let i = 1; i <= 100; i++) {
-    console.log(i);    
-    numbers = numbers + i;
+
+    if ((i % 3 ==0) && (i % 5 ==0)) {
+        numbers = numbers + `FIZZBUZZ`;
+    } 
+
+    else if (i % 3 ==0) {
+        numbers = numbers + `fizz`;
+    }
+    else if (i % 5 ==0) {
+        numbers = numbers + `buzz`;
+    }
+
+    else if (!(i % 3 ==0) && !(i % 5 ==0)) {
+        numbers = numbers + i;
+    }
 }
 
-toPrint.innerHTML = numbers;
+allNumbers.innerHTML = numbers;
+
